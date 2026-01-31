@@ -1,9 +1,10 @@
 
+// SWIPER
 const swiper = new Swiper('.swiper', {
-    loop: false,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    spaceBetween: 16,
+  loop: false,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  spaceBetween: 16,
 
   pagination: {
     el: '.swiper-pagination',
@@ -23,14 +24,21 @@ const swiper = new Swiper('.swiper', {
     },
   },
 });
-const swiperWrapper = document.querySelector('.swiper-wrapper');
+
+
+// BRANDS GRID
 const toggleBtn = document.getElementById('toggleBtn');
+const brandsGrid = document.querySelector('.brands__grid');
 
+toggleBtn.addEventListener ('click', () => {
+  const expanded = brandsGrid.classList.toggle('full__grid');
 
-toggleBtn.textContent = 'Показать все';
+  if (expanded) {
+    
+    toggleBtn.innerHTML = '<img src="../brands_logo/expand.svg" alt="">Скрыть';
 
-toggleBtn.addEventListener('click', () => {
-  const isHidden = swiperWrapper.classList.toggle('hidden');
-
-  toggleBtn.textContent = isHidden ? 'Показать все' : 'Свернуть';
+  } else {
+  
+    toggleBtn.innerHTML = '<img src="../brands_logo/expand.svg" alt="">Показать все';
+  }
 });
