@@ -7,12 +7,11 @@ if (window.innerWidth < 768) {
     swiperInstance = new Swiper('.swiper', {
       slidesPerView: 'auto',
       spaceBetween: 16,
-      centeredSlide: true,
-      slidesPerGroup: 1,
+     
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-      },
+      }
     });
   }
   toggleBtn.style.display = 'none';
