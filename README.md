@@ -1,1 +1,2 @@
-https://maksim-shin.github.io/my-project-web-core-8.4/
+[https://maksim-shin.github.io//maksim-shin/services_swiper.git
+(https://github.com/maksim-shin/services_swiper.git)
