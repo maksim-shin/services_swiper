@@ -1,75 +1,57 @@
-const toggleBtn = document.getElementById('toggleBtn');
-const wrapper = document.querySelector('.swiper-wrapper');
-let swiperInstance = null;
+document.addEventListener("DOMContentLoaded", function () {
 
-if (window.innerWidth < 768) {
-  if (!swiperInstance) {
-    swiperInstance = new Swiper('.swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
-     
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      }
-    });
-  }
-  toggleBtn.style.display = 'none';
-  wrapper.classList.remove('is-open');
+  const headers = document.querySelectorAll(".services__table thead th");
+  const tableRows = document.querySelectorAll(".services__table tbody tr");
+  const wrapper = document.querySelector(".services-swiper .swiper-wrapper");
 
+  tableRows.forEach(row => {
+    const cells = row.querySelectorAll("td");
 
-  if (swiperInstance) {
-    swiperInstance.destroy(true, true);
-    swiperInstance = null;
-  }
-  
-  
-  if (wrapper.scrollHeight > wrapper.clientHeight) {
-    toggleBtn.style.display = 'flex';
-  } else {
-    toggleBtn.style.display = 'none';
-    wrapper.classList.remove('is-open');
-  }
-}
+    const slide = document.createElement("div");
+    slide.classList.add("swiper-slide");
 
+    slide.innerHTML = `
+  <div class="services__row">
 
-toggleBtn.addEventListener('click', () => {
-  if (wrapper.classList.contains('is-open')) {
-    wrapper.classList.remove('is-open');
-    toggleBtn.innerHTML = '<img src="./brands_logo/expand.svg" alt="">Показать все';
-  } else {
-    wrapper.classList.add('is-open');
-    toggleBtn.innerHTML = '<img src="./brands_logo/expand.svg" alt="">Скрыть';
-  }
-});
+    <div class="services__cell">
+      <div class="services__label">${headers[0].textContent}</div>
+      <div class="services__value">${cells[0].textContent}</div>
+    </div>
+
+    <div class="services__cell">
+      <div class="services__label">${headers[1].textContent}</div>
+      <div class="services__value">${cells[1].textContent}</div>
+    </div>
+
+    <div class="services__cell services__cell--period">
+      <div class="services__period-block">
+        <div>
+          <div class="services__label">${headers[2].textContent}</div>
+          <div class="services__value">${cells[2].textContent}</div>
+        </div>
+
+        <div class="services__button">
+          ${cells[3].innerHTML}
+        </div>
+      </div>
+    </div>
+
+  </div>
+`;
 
 
-window.addEventListener('resize', () => {
- 
-  if (window.innerWidth < 768) {
-    if (!swiperInstance) {
-      swiperInstance = new Swiper('.swiper', {
-        slidesPerView: 'auto',
-        spaceBetween: 16,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-      });
-    }
-    toggleBtn.style.display = 'none';
-    wrapper.classList.remove('is-open');
-  } else {
-    if (swiperInstance) {
-      swiperInstance.destroy(true, true);
-      swiperInstance = null;
-    }
 
-    if (wrapper.scrollHeight > wrapper.clientHeight) {
-      toggleBtn.style.display = 'flex';
-    } else {
-      toggleBtn.style.display = 'none';
-      wrapper.classList.remove('is-open');
-    }
-  }
+
+    wrapper.appendChild(slide);
+  });
+
+  new Swiper(".services-swiper", {
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+
 });

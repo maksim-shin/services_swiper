@@ -8,38 +8,65 @@
   href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
 />
     <link rel="stylesheet" href="./css/style.css">
-    <title>Equipment repair</title>
+    <title> Service price</title>
 </head>
 <body>
-<div class="brands__container">
-     <!-- Slider main container -->
-    <div class="swiper">
-
-        <div class="swiper__title__container">
-            <h2 class="swiper__title--text">РЕМОНТ ТЕХНИКИ РAЗЛИЧНЫХ БРЕНДОВ</h2>
-        </div>
-
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper brands__tablet">
-        <!-- Slides -->
-            <div class="swiper-slide"><img src="./brands_logo/cat1.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat2.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat3.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat4.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat5.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat6.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat7.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat8.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat1.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat2.png" alt=""></div>
-            <div class="swiper-slide"><img src="./brands_logo/cat3.png" alt=""></div>
+<div class="services__container">
+    <h2 class="services__swiper--title">ЦЕНЫ НА УСЛУГИ</h2>
         
-        </div>
+    <table class="services__table">
+        <thead>
+            <tr>
+            <th class="services__label">Ремонтные услуги</th>
+            <th class="services__label">Цена</th>
+            <th class="services__label">Срок</th>
+            <th class="services__label"></th>
+            </tr>
+            
+        </thead>
 
+        <tbody>
+            <tr>
+                <td class="services__value">Услуга 1</td>
+                <td class="services__value">Цена 1</td>
+                <td class="services__value">Период 1</td>
+                <td class="services__value"><button class="service_order"><img src="./brands_logo/order.svg" alt=""></button></td>
+            </tr>
+            <tr>
+                <td class="services__value">Услуга 2</td>
+                <td class="services__value">Цена 2</td>
+                <td class="services__value">Период 2</td>
+                <td class="services__value"><button class="service_order"><img src="./brands_logo/order.svg" alt=""></button></td>
+            </tr>
+            <tr>
+                <td class="services__value">Услуга 3</td>
+                <td class="services__value">Цена 3</td>
+                <td class="services__value">Период 3</td>
+                <td class="services__value"><button class="service_order"><img src="./brands_logo/order.svg" alt=""></button></td>
+            </tr>
+            <tr>
+                <td class="services__value">Услуга 4</td>
+                <td class="services__value">Цена 4</td>
+                <td class="services__value">Период 4</td>
+                <td><button class="service_order"><img src="./brands_logo/order.svg" alt=""></button></td>
+            </tr>
+            <tr>
+                <td class="services__value">Услуга 5</td>
+                <td class="services__value">Цена 5</td>
+                <td class="services__value">Период 5</td>
+                <td class="services__value"><button class="service_order"><img src="./brands_logo/order.svg" alt=""></button></td>
+            </tr>
+        </tbody>
+    </table>
+
+            
+        
+    <div class="swiper services-swiper">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+    </div>
         <div class="swiper-pagination"></div>
 
-         <button id="toggleBtn" class="toggle--btn"><img src="./brands_logo/expand.svg" alt="">Показать все</button>
-    
     </div>
 
 
